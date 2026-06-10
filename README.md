@@ -1,6 +1,6 @@
 # Pipeline de Optimización y Analítica: Call Center
 
-Este proyecto despliega un flujo de procesamiento de datos distribuido (**ETL**) estructurado profesionalmente para el Centro de Contacto del BCP. El objetivo principal es extraer, consolidar, limpiar y transformar las métricas de telefonía de la plataforma **Genesys** cruzándolas con los perfiles comerciales del **CRM corporativo**, garantizando la disponibilidad de KPIs críticos y bases de marcación optimizadas para tableros de control en **Power BI**.
+Este proyecto despliega un flujo de procesamiento de datos distribuido (**ETL**) estructurado profesionalmente para el Centro de Contacto de una empresa del rubro Seguro/Banca. El objetivo principal es extraer, consolidar, limpiar y transformar las métricas de telefonía de la plataforma **Genesys** cruzándolas con los perfiles comerciales del **CRM corporativo**, garantizando la disponibilidad de KPIs críticos y bases de marcación optimizadas para tableros de control en **Power BI**.
 
 ---
 
