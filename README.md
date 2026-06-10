@@ -1,5 +1,9 @@
 # Pipeline de Optimización y Analítica: Call Center
 
+<p align="center">
+  <img src="img\Representación_Caso_Call_Center.png" alt="Arquitectura del Pipeline" width="100%">
+</p>
+
 Este proyecto despliega un flujo de procesamiento de datos distribuido (**ETL**) estructurado profesionalmente para el Centro de Contacto de una empresa del rubro Seguro/Banca. El objetivo principal es extraer, consolidar, limpiar y transformar las métricas de telefonía de la plataforma **Genesys** cruzándolas con los perfiles comerciales del **CRM corporativo**, garantizando la disponibilidad de KPIs críticos y bases de marcación optimizadas para tableros de control en **Power BI**.
 
 ---
@@ -48,6 +52,21 @@ Contiene la información demográfica y la estrategia comercial del cliente.
 ---
 
 ## Arquitectura del Pipeline (Procesamiento ETL)
+
+El flujo opera bajo un modelo de integración continua para optimizar canales de atención:
+
+**Entradas (Inputs Dedicados):**
+   * `Log_Interacciones.csv`: Métricas transaccionales de telefonía y canales de atención.
+   * `Maestro_Clientes.csv`: Datos demográficos y capas comerciales del CRM.
+
+**Procesamiento (Engine):**
+   * Consolidación en memoria mediante Spark SQL y transformaciones nativas de Python.
+
+**Salidas (Outputs de Impacto):**
+   * **Analítica Operativa:** KPIs de productividad (AHT, Tasas de Abandono) directo a tableros de Power BI.
+   * **Base de Marcación Saliente Limpia:** Lista depurada y priorizada comercialmente que se reinyecta al marcador automático para campañas de recupero de clientes críticos.
+
+Es necesario entender el siguiente flujo y consideraciones que se abordaran en esta casuísitica:
 
 1. **Extracción (Extract):** Inicialización del entorno mediante `SparkSession` y lectura optimizada de planos CSV con inferencia de esquemas y tipado estricto.
 2. **Transformación (Transform):**
