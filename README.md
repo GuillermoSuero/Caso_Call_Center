@@ -5,7 +5,7 @@ Este proyecto despliega un flujo de procesamiento de datos distribuido (**ETL**)
 ---
 
 ## Reto del Negocio e Impacto Operacional
-En la operación diaria de un Call Center bancario, la integridad y la velocidad de los datos determinan la calidad del servicio. Este pipeline resuelve problemas críticos de calidad de datos transaccionales:
+En la operación diaria de un Call Center de rubro Seguro/Banca, la integridad y la velocidad de los datos determinan la calidad del servicio. Este pipeline resuelve problemas críticos de calidad de datos transaccionales:
 * **Depuración de Logs Inconsistentes:** Corrección automatizada de falsos abandonos (llamadas caídas con tiempo registrado por desincronización de red).
 * **Sanitización de Contactos (Data Wrangling):** Estandarización y purga de caracteres alfanuméricos en números telefónicos mediante expresiones regulares (**Regex**).
 * **Métricas Core de Gestión:** Automatización del cálculo del **AHT (Average Handling Time)** y la **Tasa de Abandono** particionado por colas de atención.
@@ -40,7 +40,7 @@ Registra el rastro transaccional e histórico de cada llamada entrante y salient
 ### 2. Tabla: `Maestro_Clientes.csv` (Perfil Comercial - CRM)
 Contiene la información demográfica y la estrategia comercial del cliente.
 * **`Customer_ID` (String):** Identificador único del cliente (**Llave Primaria**). Garantiza unicidad en la capa dimensional.
-* **`Customer_Name` (String):** Nombre completo del usuario bancario.
+* **`Customer_Name` (String):** Nombre completo del usuario Seguro/Banca.
 * **`Segment` (String):** Clasificación de valor comercial del cliente (`Premium`, `Gold`, `Regular`). Define la prioridad en las reglas de ruteo y colas de espera.
 * **`Phone_Number` (String):** Teléfono registrado. Es el objetivo principal del proceso de sanitización para las campañas de salida.
 * **`Has_Active_Campaign` (String):** Flag comercial (`SI` / `NO`) que denota si el cliente cuenta con una oferta o producto aprobado disponible para venta cruzada.
@@ -64,7 +64,7 @@ Contiene la información demográfica y la estrategia comercial del cliente.
 Jerarquía de directorios diseñada en **Visual Studio Code** para asegurar modularidad y permitir pruebas interactivas mediante kernels de Jupyter locales:
 
 ```text
-bcp-callcenter-pipeline/
+negocio-callcenter-pipeline/
 │
 ├── data/                             <-- Almacenamiento local de datos (Ignorado en Git)
 │   ├── raw/                          <-- Archivos crudos de entrada (CSV)
